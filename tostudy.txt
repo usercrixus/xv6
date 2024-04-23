@@ -1,0 +1,44 @@
+fs.c: This file contains the implementation of the file system operations, such as file and directory manipulation, block allocation, and disk I/O functions. It provides the interface between the higher-level file system abstractions and the lower-level disk operations.
+
+file.c: This file defines the struct file and contains functions related to file handling, such as opening, reading, writing, and closing files. It interacts with the file system to perform these operations.
+
+sysfile.c: This file contains the system call implementations related to file system operations, such as open, read, write, unlink, etc. It serves as the bridge between user-level programs and the file system functionality.
+
+log.c
+
+pipe.c
+
+bio.c
+
+
+-------------
+
+
+
+Since you have already studied mkfs.c, which is responsible for creating the file system image, the next logical step would be to study fs.c. This file contains the implementation of the file system operations, including file and directory manipulation, block allocation, and disk I/O functions.
+
+Understanding fs.c will give you insights into how the xv6 file system handles various file system operations internally. It provides the interface between higher-level file system abstractions (such as file.c and sysfile.c) and the lower-level disk operations.
+
+Once you have a good understanding of fs.c, you can proceed to study file.c, which defines the struct file and contains functions related to file handling, such as opening, reading, writing, and closing files. This file interacts with the file system (fs.c) to perform these operations.
+
+Lastly, you can study sysfile.c, which contains the system call implementations related to file system operations. This file serves as the bridge between user-level programs and the file system functionality. It provides the interface for user programs to interact with the file system through system calls such as open, read, write, unlink, and more.
+
+By following this order (fs.c -> file.c -> sysfile.c), you can progressively delve into the inner workings of the xv6 file system and understand how different components interact with each other to provide file system functionality.
+
+
+---------------
+
+in fs.c :
+iget (cf panic msg) :
+ME
+it isnt logic to panic because the inod isnt find in the cache...it is normal all file cant be in the cache
+
+ChatGPT
+You're correct that not all inodes can be cached in memory, and it's normal for inodes to be fetched from disk when they are not found in the cache. Panicking when the cache is full may not be the best approach in this case.
+
+In the xv6 file system implementation, if the inode cache is full and no empty slot is available, it triggers a panic to indicate a critical error condition. However, a more appropriate approach would be to evict an existing inode from the cache, replacing it with the newly requested inode.
+
+By evicting an inode, the cache can make space for the requested inode without losing data consistency. The evicted inode can be written back to disk if it has been modified, ensuring that its state is preserved.
+
+It's important to note that the implementation you provided might be a simplified version, and the actual xv6 file system may have a different mechanism for handling a full inode cache. Studying the complete implementation of the xv6 file system would provide a more accurate understanding of how it handles cache eviction and disk I/O.
+

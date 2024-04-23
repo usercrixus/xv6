@@ -1,0 +1,22 @@
+To debug xv6 launch
+sudo make qemu-gdb
+
+then in vscode, ctrl+,
+search for settings.json and edit launch for :
+    "launch": {
+        "configurations": [
+            {
+                "name": "Debug xv6",
+                "type": "cppdbg",
+                "request": "launch",
+                "program": "${workspaceFolder}/kernel",
+                "cwd": "${workspaceFolder}",
+                "MIMode": "gdb",
+                "miDebuggerPath": "gdb",
+                "stopAtEntry": true
+            }
+        ],
+        "compounds": []
+    }
+    
+you now can go in Run and debug you use Debug XV6 config

@@ -1,0 +1,40 @@
+REWORK :
+console.c
+lapic.c
+
+-----
+i have the sensation that i can make a dealloc clearer at : void freevm(pde_t* pgdir)
+-----
+in seginit, cpuid is called without interupt desabled.
+-----
+To me, in void consputc(int c), is useless :
+    if (panicked) {
+        cli();
+        for (;;)
+            ;
+    }
+Instead we should, where panic is set to 1, disable interupt and enter in an infinite loop
+-----
+the file proc.c can be interpreted as processor instead or precessus. I consider his name as an error.
+the struct proc has the same prob.
+-----
+in proc struct chan is never effectively used... maybe it is an idea to implement. But currently, it is useless and the wakeup system seem to be dangerous or just not implemented. It is something a bit weird when you read the code.
+We have to verify that, if we ask a process to sleep and that the sheduler as no other process to elect, the process to which we asked to sleep effectively sleep.
+-----
+if you simply follow the c code from main, their is some function and data that you will not analysed :
+trap();
+-----
+Why in static void startothers(void) isnt entryother.S directly link at 0x7000 in the linker script ?
+-----
+void microdelay(int us) {} is not implemented
+-----
+can't figure out why kinit2 must be called after startother
+-----
+base on log.c file it seem that xv6 can only manage one unique disk device
+-----
+in void bwrite(struct buf* b)
+    iderw(b); look to not work correctly
+-----
+in static void write_head(void)  i'm not sure about hb->n = log.lh.n;
+-----
+i'm realy not sure that the file system log is working...

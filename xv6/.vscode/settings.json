@@ -1,0 +1,28 @@
+{
+    "files.associations": {
+        "*/**.c": "c",
+        "*/**.h": "c",
+        "memlayout.h": "c",
+        "x86.h": "c",
+        "trap.h": "c",
+        "uart.h": "c",
+        "param.h": "c",
+        "types.h": "c"
+    },
+    "C_Cpp.clang_format_fallbackStyle": "{BasedOnStyle: Chromium, IndentWidth: 4, SortIncludes: false}",
+    "launch": {
+        "configurations": [
+            {
+                "name": "Debug xv6",
+                "type": "cppdbg",
+                "request": "launch",
+                "program": "${workspaceFolder}/kernel",
+                "cwd": "${workspaceFolder}",
+                "MIMode": "gdb",
+                "miDebuggerPath": "gdb",
+                "stopAtEntry": true,
+            }
+        ],
+        "compounds": []
+    }
+}

@@ -4,7 +4,7 @@ The kalloc.c file is responsible for memory allocation in the kernel (Allocates
 */
 
 #include "../type/types.h"
-#include "../defs.h"
+#include "defs.h"
 #include "../type/param.h"
 #include "memlayout.h"
 #include "mmu.h"

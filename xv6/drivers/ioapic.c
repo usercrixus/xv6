@@ -44,7 +44,7 @@ single point.
 Control: Each LAPIC can be independently programmed and controlled.
 */
 #include ".././type/types.h"
-#include "../defs.h"
+#include "defs.h"
 #include "../systemCall/traps.h"
 
 /*

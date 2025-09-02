@@ -1,6 +1,6 @@
 #include "../type/types.h"
-#include "../x86.h"
-#include "../defs.h"
+#include "x86.h"
+#include "defs.h"
 #include "../type/date.h"
 #include "../type/param.h"
 #include "../memory/memlayout.h"

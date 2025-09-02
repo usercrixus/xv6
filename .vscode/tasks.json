@@ -5,12 +5,11 @@
       "label": "xv6: qemu-gdb",
       "type": "shell",
       "command": "make qemu-gdb",
-      "options": { "cwd": "${workspaceFolder}/xv6" },
       "isBackground": true,
       "presentation": {
-        "reveal": "always",
+        "reveal": "silent",
         "panel": "dedicated",
-        "clear": true
+        "clear": false
       },
       "problemMatcher": {
         "owner": "xv6-qemu",
@@ -27,4 +26,3 @@
     }
   ]
 }
-

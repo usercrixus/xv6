@@ -1,7 +1,7 @@
 #ifndef TRAP_H
 #define TRAP_H
 
-#include "../x86.h"
+#include "x86.h"
 
 extern uint ticks;
 extern struct spinlock tickslock;

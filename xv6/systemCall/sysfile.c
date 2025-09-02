@@ -6,7 +6,7 @@ Mostly argument checking, since we don't trust user code
 */
 
 #include "../type/types.h"
-#include "../defs.h"
+#include "defs.h"
 #include "../type/param.h"
 #include "../fileSystem/stat.h"
 #include "../memory/mmu.h"

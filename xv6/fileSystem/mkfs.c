@@ -534,11 +534,15 @@ int main(int argc, char* argv[]) {
         }
 
         /*
-        Skip leading _ in name when writing to file system.
-        The binaries are named _rm, _cat, etc.
+        Choose on-disk name: use basename (strip directories),
+        then skip leading '_' for user binaries like _rm, _cat, etc.
         */
-        if (argv[i][0] == '_')
-            ++argv[i];
+        const char* ondisk = argv[i];
+        const char* slash = strrchr(ondisk, '/');
+        if (slash)
+            ondisk = slash + 1;
+        if (ondisk[0] == '_')
+            ++ondisk;
         /*
         allocate an inode for the file using the allocInode function, specifying
         the file type as T_FILE. The resulting inode number is stored in the
@@ -551,7 +555,7 @@ int main(int argc, char* argv[]) {
         set name and inum
         */
         de.inum = inum;
-        strncpy(de.name, argv[i], DIRSIZ);
+        strncpy(de.name, ondisk, DIRSIZ);
         /*
         appends the directory entry to the root directory.
         */

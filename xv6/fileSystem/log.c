@@ -1,5 +1,5 @@
 #include "../type/types.h"
-#include "../defs.h"
+#include "defs.h"
 #include "../type/param.h"
 #include "../synchronization/spinlock.h"
 #include "../synchronization/sleeplock.h"

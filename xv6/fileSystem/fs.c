@@ -10,7 +10,7 @@
 // are in sysfile.c.
 
 #include "../type/types.h"
-#include "../defs.h"
+#include "defs.h"
 #include "../type/param.h"
 #include "stat.h"
 #include "../memory/mmu.h"

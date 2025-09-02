@@ -23,7 +23,7 @@ RS-232 COM ports and used USB ports that can send data faster.
 */
 
 #include "../type/types.h"
-#include "../defs.h"
+#include "defs.h"
 #include "../type/param.h"
 #include "../systemCall/traps.h"
 #include "../synchronization/spinlock.h"
@@ -32,7 +32,7 @@ RS-232 COM ports and used USB ports that can send data faster.
 #include "../fileSystem/file.h"
 #include "../memory/mmu.h"
 #include "../processus/proc.h"
-#include "../x86.h"
+#include "x86.h"
 #include "uart.h"
 #include "lapic.h"
 

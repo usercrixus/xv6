@@ -18,12 +18,12 @@ systems with many I/O devices.
 
 #include "../type/param.h"
 #include "../type/types.h"
-#include "../defs.h"
+#include "defs.h"
 #include "../type/date.h"
 #include "../memory/memlayout.h"
 #include "../systemCall/traps.h"
 #include "../memory/mmu.h"
-#include "../x86.h"
+#include "x86.h"
 #include "../userLand/ulib.h"
 #include "lapic.h"
 

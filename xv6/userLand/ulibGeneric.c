@@ -5,7 +5,7 @@ and system call (function defined in user.h)
 
 #include ".././type/types.h"
 #include "ulib.h"
-#include "../x86.h"
+#include "x86.h"
 
 char* strcpy(char* s, const char* t) {
     char* os;

@@ -3,7 +3,7 @@
 #include "../type/types.h"
 #include "../fileSystem/stat.h"
 #include "../userLand/user.h"
-#include "../defs.h"
+#include "defs.h"
 #include "../userLand/printf.h"
 #include "../userLand/ulib.h"
 

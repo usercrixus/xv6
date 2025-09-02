@@ -1,9 +1,9 @@
 // Sleeping locks
 
 #include "../type/types.h"
-#include "../defs.h"
+#include "defs.h"
 #include "../type/param.h"
-#include "../x86.h"
+#include "x86.h"
 #include "../memory/memlayout.h"
 #include "../memory/mmu.h"
 #include "../processus/proc.h"

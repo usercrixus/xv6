@@ -25,10 +25,11 @@ struct mp {
     */
     uchar signature[4];
     /*
-    The physical address of the MP configuration table. It specifies the
-    location in memory where the MP configuration table can be found.
+    The physical address (32-bit) of the MP configuration table.
+    Use an integer here to avoid GCC's object-size based array-bounds
+    diagnostics on opaque firmware pointers during -m32 builds.
     */
-    void* physaddr;
+    uint physaddr;
     /*
     The length of the floating pointer structure in bytes. It is typically set
     to 1.

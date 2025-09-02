@@ -1,0 +1,30 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "xv6: qemu-gdb",
+      "type": "shell",
+      "command": "make qemu-gdb",
+      "options": { "cwd": "${workspaceFolder}/xv6" },
+      "isBackground": true,
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "clear": true
+      },
+      "problemMatcher": {
+        "owner": "xv6-qemu",
+        "fileLocation": "absolute",
+        "background": {
+          "activeOnStart": true,
+          "beginsPattern": ".*",
+          "endsPattern": "qemu-system-i386 .*tcp::26000"
+        },
+        "pattern": {
+          "regexp": ".^"
+        }
+      }
+    }
+  ]
+}
+

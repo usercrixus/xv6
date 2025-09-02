@@ -1,0 +1,56 @@
+# Artifacts removed by `make clean` in xv6
+
+# Top-level known artifacts
+xv6/*.tex
+xv6/*.dvi
+xv6/*.idx
+xv6/*.aux
+xv6/*.log
+xv6/*.ind
+xv6/*.ilg
+xv6/*.sym
+
+# Generated sources/binaries
+xv6/systemCall/vectors.S
+xv6/bootblock
+xv6/bootblock.o
+xv6/bootblockother.o
+xv6/entryother
+xv6/entryother.o
+xv6/entryother.asm
+xv6/initcode
+xv6/initcode.o
+xv6/initcode.out
+
+# Kernel and disk images
+xv6/kernel
+xv6/kernelmemfs
+xv6/xv6.img
+xv6/xv6memfs.img
+xv6/fs.img
+
+# Tools and debug init
+xv6/mkfs
+xv6/.gdbinit
+
+# Built user programs
+xv6/_cat
+xv6/_echo
+xv6/_forktest
+xv6/_grep
+xv6/_init
+xv6/_kill
+xv6/_ln
+xv6/_ls
+xv6/_mkdir
+xv6/_rm
+xv6/_sh
+xv6/_stressfs
+xv6/_wc
+xv6/_zombie
+
+# Recursively ignore intermediate files produced during builds
+xv6/**/*.o
+xv6/**/*.d
+xv6/**/*.asm
+

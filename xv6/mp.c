@@ -141,6 +141,9 @@ table (located just after itself) and other relevant information about the
 system's MP configuration.
 */
 static struct mpconf* mpconfig(struct mp* mp) {
+    // Guard against missing MP floating pointer structure
+    if (mp == 0 || mp->physaddr == 0)
+        return 0;
     struct mpconf* conf = (struct mpconf*)P2V((uint)mp->physaddr);
     if (memcmp(conf, "PCMP", 4) != 0)
         return 0;

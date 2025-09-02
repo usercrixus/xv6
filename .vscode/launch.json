@@ -1,0 +1,24 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "xv6: QEMU",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "${workspaceFolder}/xv6/kernel",
+      "cwd": "${workspaceFolder}/xv6",
+      "MIMode": "gdb",
+      "miDebuggerPath": "gdb",
+      "externalConsole": false,
+      "stopAtEntry": true,
+      "launchCompleteCommand": "None",
+      "preLaunchTask": "xv6: qemu-gdb",
+      "setupCommands": [
+        { "description": "Enable pretty-printing", "text": "-enable-pretty-printing", "ignoreFailures": true },
+        { "description": "Connect to QEMU", "text": "target remote localhost:26000", "ignoreFailures": false },
+        { "description": "Load kernel symbols", "text": "symbol-file kernel", "ignoreFailures": true },
+        { "description": "Force i386 architecture", "text": "set architecture i386", "ignoreFailures": true }
+      ]
+    }
+  ]
+}
